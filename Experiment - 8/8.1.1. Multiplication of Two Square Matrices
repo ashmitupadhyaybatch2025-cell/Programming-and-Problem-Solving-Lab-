@@ -1,0 +1,18 @@
+n = int(input("dimension: "))
+
+print("first matrix:")
+A = [list(map(int, input().split())) for _ in range(n)]
+
+print("second matrix:")
+B = [list(map(int, input().split())) for _ in range(n)]
+
+print("Resultant Matrix:")
+for i in range(n):
+    for j in range(n):
+        s = 0
+        for k in range(n):
+            s += A[i][k] * B[k][j]
+        if j == n-1:
+            print(s)
+        else:
+            print(s, end=" ")
