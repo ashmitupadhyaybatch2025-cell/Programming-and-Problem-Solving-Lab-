@@ -1,0 +1,28 @@
+'''def sum_of_digits_recursive(n):
+	
+	# Write your code here
+	
+	return      sum_of_digits_recursive(   )
+
+
+
+# Write your code here
+
+result = sum_of_digits_recursive(number)	
+'''
+def sum_of_digits_recursive(n):
+    # Base case: if n is a single digit, return n
+    if n < 10:
+        return n
+    
+    # Recursive step: last digit + sum of remaining digits
+    return (n % 10) + sum_of_digits_recursive(n // 10)
+
+# Example usage (as seen in the image)
+number = int(input()) # Or any non-negative integer
+result = sum_of_digits_recursive(number)
+print(result)
+
+
+
+	
