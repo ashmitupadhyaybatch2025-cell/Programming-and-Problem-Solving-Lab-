@@ -1,0 +1,40 @@
+  def phone_book_manager():
+    
+    phone_book = {}
+
+    try:
+        
+        n = int(input())
+    except EOFError:
+        return
+
+    for _ in range(n):
+        
+        line = input().split()
+        if not line:
+            continue
+            
+        command = line[0]
+
+        if command == "ADD":
+           
+            name, phone = line[1], line[2]
+            phone_book[name] = phone
+
+        elif command == "REMOVE":
+            name = line[1]
+            
+            phone_book.pop(name, None)
+
+        elif command == "DISPLAY":
+            if not phone_book:
+                print("No contacts")
+            else:
+                
+                for name in sorted(phone_book.keys()):
+                    print(f"{name}: {phone_book[name]}")
+
+
+if __name__ == "__main__":
+    phone_book_manager()
+
